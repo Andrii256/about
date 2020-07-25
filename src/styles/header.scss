@@ -1,0 +1,138 @@
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $mainDesktopHorizontalPadding;
+  background-color: $colorBackground;
+  box-shadow: 0 1px 5px #{$color256}30;
+  @media (max-width: $screenLaptopSmall) {
+    flex-direction: row-reverse;
+  }
+  @media (max-width: $screenMobile) {
+    padding: 0 $mainMobileHorizontalPadding;
+  }
+
+  &__logo-box {
+    font-size: 30px;
+    font-family: $fontTitle;
+    margin-left: calc( -8px + (100vw - #{$containerMaxWidth}) / 2);
+    padding: 0.4em 0;
+    color: $color256;
+    transition-duration: $transitionDuration;
+    &:hover {
+      color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $color256;
+    }
+    @media (max-width: $containerMaxWidth) {
+      margin-left: 0;
+    }
+    @media (max-width: $screenLaptopSmall) {
+      font-size: $headerMenuTogglerSide;
+    }
+  }
+  &__sublogo {
+    display: block;
+    font-size: 0.47em;
+  }
+
+  &__links-container {
+    color: $colorSemiDark;
+    font-size: 15px;
+    @media (max-width: $screenLaptopSmall) {
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      right: -100vw;
+      width: 100vw;
+      padding-right: 30vw;
+      height: 100vh;
+      font-family: $fontTitle;
+      font-size: 30px;
+      color: $colorBackground;
+      background-color: #{$color256}cc;
+      backdrop-filter: blur(4px);
+      transition-duration: $transitionDuration * 3;
+      transition-timing-function: cubic-bezier(1,-0.77,0.02,1.5);
+    }
+  }
+  &__links-list {
+    display: flex;
+    align-items: center;
+    @media (max-width: $screenLaptopSmall) {
+      position: relative;
+      z-index: 11;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      height: 100%;
+      padding: 15% 10% 3%;
+    }
+  }
+  &__link {
+    position: relative;
+    margin-right: 2em;
+    padding: 1em 0;
+    @media (max-width: $screenLaptopSmall) {
+      margin-right: 0;
+      // padding: 10px 0;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0.5em;
+      display: inline-block;
+      height: 2px;
+      width: 0;
+      margin-left: 50%;
+      background-color: $color256;
+      transition-duration: $transitionDuration * 0.7;
+    }
+    &:hover {
+      color: $color256;
+      &::after {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__menu-toggler-line {
+    height: 2px;
+    width: 100%;
+    background-color: $color256;
+    transition: margin ($transitionDuration / 2) ease-in,
+      transform ($transitionDuration * 2) cubic-bezier(1,-0.77,0.02,1.5);
+  }
+  &__menu-toggler {
+    display: none;
+  }
+  &__menu-toggler:checked ~ &__links-container {
+    right: -30vw;
+  }
+  &__menu-toggler:checked ~ &__menu-toggler-button &__menu-toggler-line {
+    &--1 {
+      transform: translateY($headerMenuTogglerSide / 3) rotate(-135deg);
+    }
+    &--2 {
+      transform: translateX(-50px);
+    }
+    &--3 {
+      transform: translateY(- $headerMenuTogglerSide / 3) rotate(135deg);
+    }
+  }
+  &__menu-toggler-button {
+    display: none;
+    cursor: pointer;
+    @media (max-width: $screenLaptopSmall) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: $headerMenuTogglerSide;
+      width: $headerMenuTogglerSide;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.heading1 {
+  margin: 0;
+  font-family: $fontTitle;
+  font-size: 40px;
+  line-height: 1;
+  color: $colorSaturated;
+
+  &__subtitle {
+    font-size: 25px;
+    @media (max-width: $screenMobile) {
+      font-size: 15px;
+    }
+  }
+
+  @media (max-width: $screenMobile) {
+    padding: 0 $mainMobileHorizontalPadding;
+    font-size: 25px;
+  }
+}
+
+.heading2 {
+  margin: 40px 0 0;
+  font-family: $fontTitle;
+  font-size: 30px;
+  color: $colorSaturated;
+  @media (max-width: $screenMobile) {
+    margin-top: 30px;
+    padding: 0 $mainMobileHorizontalPadding;
+    font-size: 25px;
+  }
+}
+
+.regular-text {
+  margin: 15px 0 0;
+  font-size: 14px;
+  color: $colorSemiDark;
+  &:nth-child(2) {
+    margin-top: 5px;
+  }
+  @media (max-width: $screenMobile) {
+    padding: 0 $mainMobileHorizontalPadding;
+    font: 12px;
+  }
+}
+
+.text-link {
+  position: relative;
+  z-index: -1; //pay attention. there are chrome bug
+  display: inline-block;
+  color: $colorSaturated;
+  font-weight: 700;
+  text-decoration: none;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    background-color: $colorSaturated;
+    transition-duration: $transitionDuration * 8;
+  }
+  &:hover {
+    color: transparent;
+    transition-delay: $transitionDuration * 8;
+    &::after {
+      animation: text-link-width $transitionDuration * 8 steps(1);
+      width: 0%;
+      background-color: $colorSemiDark;
+    }
+  }
+}
+
+@keyframes text-link-width {
+  0% {
+    width: 75%;
+  }
+  25% {
+    width: 50%;
+  }
+  50% {
+    width: 25%;
+  }
+  75% {
+    width: 0%;
+  }
+}

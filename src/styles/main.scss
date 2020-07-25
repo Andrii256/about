@@ -1,7 +1,42 @@
-@import "utils";
+@import "variables";
 @import "fonts";
-@import "typography";
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+  color: $colorBackground;
+  background-color: $colorSaturated;
+}
 
 body {
-  background: $c-gray;
+  margin: 0;
+  font-family: $fontText;
+  background-color: $colorBackground;
 }
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+strong {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@import "content-container";
+@import "typography";
+@import "multimedia";
+@import "header";
+@import "footer";

@@ -1,0 +1,16 @@
+.footer {
+
+  &__contacts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 50px));
+    grid-gap: 3px;
+    flex-wrap: wrap;
+  }
+  &__contact {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    background-color: red;
+    border-radius: 50%;
+  }
+}

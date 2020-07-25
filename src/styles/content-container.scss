@@ -1,0 +1,8 @@
+.content-container {
+  max-width: $containerMaxWidth;
+  margin: 10px auto $mainVerticalMargin auto;
+  padding: 0 $mainDesktopHorizontalPadding;
+  @media (max-width: $screenMobile) {
+    padding: 0;
+  }
+}

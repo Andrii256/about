@@ -1,0 +1,29 @@
+.post-preview {
+  display: flex;
+  flex-direction: column;
+  // padding-bottom: 10px;
+  border-bottom: 1px solid $colorSemiLight;
+
+  &__heading {
+    transition-duration: $transitionDuration / 1.5;
+    &:hover {
+      color: #000;
+    }
+  }
+  &__description {
+    &:after {
+      content: "...";
+    }
+  }
+  &__read-more {
+    display: block;
+    align-self: flex-end;
+    padding: 0 15px 10px;
+    font-size: 0.8em;
+    color: $color256;
+    transition-duration: $transitionDuration / 2;
+    &:hover {
+      color: $colorSemiDark;
+    }
+  }
+}

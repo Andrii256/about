@@ -1,5 +1,4 @@
 @import "variables";
-@import "fonts";
 
 * {
   box-sizing: border-box;
@@ -51,3 +50,6 @@ button {
 @import "multimedia";
 @import "header";
 @import "footer";
+@import "post-preview";
+
+@import "fonts";

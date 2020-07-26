@@ -22,7 +22,8 @@
     padding: 0.4em 0;
     color: $color256;
     transition-duration: $transitionDuration;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: transparent;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: $color256;
@@ -57,9 +58,8 @@
       color: $colorBackground;
       background-color: #{$color256}cc;
       backdrop-filter: blur(4px);
-      transition-duration: $transitionDuration * 2;
-      transition-delay: $transitionDuration;
-      transition-timing-function: ease-in-out;
+      transition-duration: $transitionDuration;
+      transition-timing-function: ease-in;
     }
   }
   &__links-list {
@@ -71,7 +71,7 @@
       justify-content: space-around;
       align-items: flex-start;
       height: 100%;
-      padding: 10% 5% 1%;
+      padding: 10% 3%;
     }
   }
   &__link {

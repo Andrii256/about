@@ -17,7 +17,8 @@
 
   &__logo-box {
     font-size: 30px;
-    font-family: $fontTitle;
+    // font-family: $fontTitle;
+    font-family: $fontLogo;
     margin-left: calc( -8px + (100vw - #{$containerMaxWidth}) / 2);
     padding: 0.4em 0;
     color: $color256;

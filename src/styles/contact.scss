@@ -1,0 +1,54 @@
+.contact {
+
+  &__heading-icon {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 5px;
+    background-color: #{$color256};
+    border-radius: 50%;
+
+    background-size: 45% 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition-duration: $transitionDuration;
+
+    &--telegram {
+      background-image: url(../images/contacts/telegram.svg);
+    }
+    &--instagram {
+      background-image: url(../images/contacts/instagram.svg);
+    }
+    &--facebook {
+      background-image: url(../images/contacts/facebook.svg);
+    }
+    &--linkedin {
+      background-image: url(../images/contacts/linkedin.svg);
+    }
+    &--email {
+      background-image: url(../images/contacts/email.svg);
+    }
+    &--phone {
+      background-image: url(../images/contacts/phone.svg);
+    }
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    transition-duration: $transitionDuration / 1.5;
+    &:hover,
+    &:focus {
+      color: #{$color256}99;
+      & .contact__heading-icon {
+        background-color: #{$color256}99;
+      }
+    }
+    &--nohover {
+      &:hover {
+        color: $color256;
+      }
+    }
+  }
+}

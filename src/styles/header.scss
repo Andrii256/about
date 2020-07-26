@@ -22,10 +22,11 @@
     padding: 0.4em 0;
     color: $color256;
     transition-duration: $transitionDuration;
-    &:hover {
+    &:hover, &:focus {
       color: transparent;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: $color256;
+      outline: none;
     }
     @media (max-width: $containerMaxWidth) {
       margin-left: 0;
@@ -95,8 +96,10 @@
         background-color: $colorBackground;
       }
     }
-    &:hover {
+    &:hover,
+    &:focus {
       color: $color256;
+      outline: none;
       &::after {
         width: 100%;
         margin-left: 0;

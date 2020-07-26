@@ -1,16 +1,97 @@
 .footer {
+  max-width: $containerMaxWidth;
+  margin: auto;
+  padding: 30px $mainDesktopHorizontalPadding;
+  @media (max-width: $screenMobile) {
+    padding: 30px $mainMobileHorizontalPadding;
+  }
+
+  &__title {
+    // font-size: 1.2em;
+    font-weight: 700;
+    color: $color256;
+    margin-bottom: 10px;
+  }
+  &__license {
+    font-size: 0.7em;
+    text-align: center;
+    color: #{$color256}bb;
+  }
 
   &__contacts-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 50px));
-    grid-gap: 3px;
+    display: flex;
     flex-wrap: wrap;
+    margin-bottom: 20px;
   }
   &__contact {
-    height: 50px;
-    width: 50px;
-    margin-right: 10px;
-    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $footerContactSide;
+    width: $footerContactSide;
+    margin: 0 ($footerContactSide / 5) ($footerContactSide / 5) 0;
+    background-color: #{$color256}90;
     border-radius: 50%;
+    transition-duration: $transitionDuration;
+    user-select: none;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: $color256;
+    }
+    &--hidden {
+      width: 0;
+      margin: 0;
+    }
+    &--unfolder {
+      background-color: $colorSemiLight;
+      &:hover,
+      &:focus {
+        background-color: $colorSemiDark;
+      }
+    }
+  }
+  &__contact-icon {
+    display: block;
+    height: 50%;
+    width: 50%;
+    color: transparent;
+    font-size: 1px;
+    background-size: contain;
+    background-position: center;
+    &--linkedin {
+      background-image: url(../images/footer/linkedin.svg);
+    }
+    &--email {
+      background-image: url(../images/footer/email.svg);
+    }
+    &--facebook {
+      background-image: url(../images/footer/facebook.svg);
+    }
+    &--instagram {
+      background-image: url(../images/footer/instagram.svg);
+    }
+    &--telegram {
+      background-image: url(../images/footer/telegram.svg);
+    }
+    &--github {
+      background-image: url(../images/footer/github.svg);
+    }
+    &--livelib {
+      background-image: url(../images/footer/livelib.svg);
+    }
+    &--youtube {
+      background-image: url(../images/footer/youtube.svg);
+    }
+    &--twitter {
+      background-image: url(../images/footer/twitter.svg);
+    }
+    &--phone {
+      background-image: url(../images/footer/phone.svg);
+    }
+    &--unfolder {
+      background-image: url(../images/footer/unfolder.svg);
+    }
   }
 }

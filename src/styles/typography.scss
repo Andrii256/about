@@ -8,13 +8,13 @@
   &__subtitle {
     font-size: 25px;
     @media (max-width: $screenMobile) {
-      font-size: 15px;
+      font-size: 20px;
     }
   }
 
   @media (max-width: $screenMobile) {
     padding: 0 $mainMobileHorizontalPadding;
-    font-size: 25px;
+    font-size: 30px;
   }
 }
 
@@ -32,26 +32,27 @@
 
 .regular-text {
   margin: 15px 0 0;
-  font-size: 14px;
-  color: $colorSemiDark;
   &:nth-child(2) {
     margin-top: 5px;
   }
   @media (max-width: $screenMobile) {
     padding: 0 $mainMobileHorizontalPadding;
-    font: 12px;
+    // font-size: 12px;
   }
 }
 
 .text-link {
   display: inline-block;
   font-weight: 700;
+  color: #000;
   border-bottom: 2px solid $color256;
   
-  &:hover {
+  &:hover,
+  &:focus {
     color: $color256;
     animation: text-link-playing $transitionDuration / 2
       cubic-bezier(0.39,0.93,0.54,1.74);
+    outline: none;
   }
 }
 

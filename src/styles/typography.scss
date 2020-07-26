@@ -3,7 +3,7 @@
   font-family: $fontTitle;
   font-size: 40px;
   line-height: 1;
-  color: $colorSaturated;
+  color: $color256;
 
   &__subtitle {
     font-size: 25px;
@@ -22,7 +22,7 @@
   margin: 40px 0 0;
   font-family: $fontTitle;
   font-size: 30px;
-  color: $colorSaturated;
+  color: $color256;
   @media (max-width: $screenMobile) {
     margin-top: 30px;
     padding: 0 $mainMobileHorizontalPadding;
@@ -44,44 +44,27 @@
 }
 
 .text-link {
-  position: relative;
-  z-index: -1; //pay attention. there are chrome bug
   display: inline-block;
-  color: $colorSaturated;
   font-weight: 700;
-  text-decoration: none;
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    right: 0;
-    height: 2px;
-    width: 100%;
-    background-color: $colorSaturated;
-    transition-duration: $transitionDuration * 8;
-  }
+  border-bottom: 2px solid $color256;
+  
   &:hover {
-    color: transparent;
-    transition-delay: $transitionDuration * 8;
-    &::after {
-      animation: text-link-width $transitionDuration * 8 steps(1);
-      width: 0%;
-      background-color: $colorSemiDark;
-    }
+    color: $color256;
+    animation: text-link-playing $transitionDuration / 2
+      cubic-bezier(0.39,0.93,0.54,1.74);
   }
 }
 
-@keyframes text-link-width {
+@keyframes text-link-playing {
   0% {
-    width: 75%;
-  }
-  25% {
-    width: 50%;
+    transform: none;
+    letter-spacing: 0;
   }
   50% {
-    width: 25%;
+    transform: scaleX(1.05);
   }
-  75% {
-    width: 0%;
+  100% {
+    transform: none;
+    letter-spacing: 0;
   }
 }

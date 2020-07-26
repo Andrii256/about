@@ -7,6 +7,7 @@
   padding: 0 $mainDesktopHorizontalPadding;
   background-color: $colorBackground;
   box-shadow: 0 1px 5px #{$color256}30;
+  user-select: none;
   @media (max-width: $screenLaptopSmall) {
     flex-direction: row-reverse;
   }
@@ -45,17 +46,19 @@
       position: fixed;
       z-index: 10;
       top: 0;
-      right: -100vw;
-      width: 100vw;
-      padding-right: 30vw;
+      right: -70vw;
+      width: 140vw;
+      transform: rotateY(90deg);
       height: 100vh;
+
       font-family: $fontTitle;
       font-size: 30px;
       color: $colorBackground;
       background-color: #{$color256}cc;
       backdrop-filter: blur(4px);
-      transition-duration: $transitionDuration * 3;
-      transition-timing-function: cubic-bezier(1,-0.77,0.02,1.5);
+      transition-duration: $transitionDuration * 2;
+      transition-delay: $transitionDuration;
+      transition-timing-function: ease-in-out;
     }
   }
   &__links-list {
@@ -63,12 +66,11 @@
     align-items: center;
     @media (max-width: $screenLaptopSmall) {
       position: relative;
-      z-index: 11;
       flex-direction: column;
       justify-content: space-around;
       align-items: flex-start;
       height: 100%;
-      padding: 15% 10% 3%;
+      padding: 10% 5% 1%;
     }
   }
   &__link {
@@ -77,7 +79,6 @@
     padding: 1em 0;
     @media (max-width: $screenLaptopSmall) {
       margin-right: 0;
-      // padding: 10px 0;
     }
     &::after {
       content: "";
@@ -90,12 +91,18 @@
       margin-left: 50%;
       background-color: $color256;
       transition-duration: $transitionDuration * 0.7;
+      @media (max-width: $screenLaptopSmall) {
+        background-color: $colorBackground;
+      }
     }
     &:hover {
       color: $color256;
       &::after {
         width: 100%;
         margin-left: 0;
+      }
+      @media (max-width: $screenLaptopSmall) {
+        color: $colorBackground;
       }
     }
   }
@@ -111,7 +118,7 @@
     display: none;
   }
   &__menu-toggler:checked ~ &__links-container {
-    right: -30vw;
+    transform: none;
   }
   &__menu-toggler:checked ~ &__menu-toggler-button &__menu-toggler-line {
     &--1 {
